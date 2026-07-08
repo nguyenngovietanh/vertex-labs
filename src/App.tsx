@@ -11,7 +11,11 @@ import { VertexContact } from './components/vertex-contact';
 import { VertexFooter } from './components/vertex-footer';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  // Kiểm tra xem đã chạy intro trong phiên này chưa (dùng sessionStorage)
+  const [showIntro, setShowIntro] = useState(() => {
+    return sessionStorage.getItem('hasSeenIntro') !== 'true';
+  });
+  
   const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -30,6 +34,12 @@ function App() {
     };
   }, []);
 
+  // Handle Intro Completion
+  const handleIntroComplete = () => {
+    sessionStorage.setItem('hasSeenIntro', 'true');
+    setShowIntro(false);
+  };
+
   // Prevent scroll during intro
   useEffect(() => {
     if (showIntro) {
@@ -44,18 +54,23 @@ function App() {
 
   return (
     <div className="min-h-screen bg-dark-950 text-dark-100 overflow-x-hidden">
-      {showIntro && <VertexIntro onComplete={() => setShowIntro(false)} />}
-      <VertexNavigation scrollY={scrollY} />
-      <main>
-        <VertexHero scrollY={scrollY} mousePosition={mousePosition} />
-        <VertexAbout />
-        <VertexServices />
-        <VertexProjects />
-        <VertexTeam />
-        <VertexClients />
-        <VertexContact />
-      </main>
-      <VertexFooter />
+      {showIntro ? (
+        <VertexIntro onComplete={handleIntroComplete} />
+      ) : (
+        <>
+          <VertexNavigation scrollY={scrollY} />
+          <main>
+            <VertexHero scrollY={scrollY} mousePosition={mousePosition} />
+            <VertexAbout />
+            <VertexServices />
+            <VertexProjects />
+            <VertexTeam />
+            <VertexClients />
+            <VertexContact />
+          </main>
+          <VertexFooter />
+        </>
+      )}
     </div>
   );
 }
