@@ -27,7 +27,7 @@ export function VertexTeam() {
       name: 'Nguyễn Quỳnh Nga',
       role: 'Founder & CEO',
       bio: '10+ years in product development. Former Tech Lead at major tech companies.',
-      image: '../public/profile-1.jpg',
+      image: '/profile-1.jpg',
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
@@ -41,14 +41,14 @@ export function VertexTeam() {
       name: 'Lê Chí Kiên',
       role: 'Fullstack Developer',
       bio: 'Full-stack architect specializing in scalable cloud solutions.',
-      image: '../public/profile-2.jpg',
+      image: '/profile-2.jpg',
       socials: { linkedin: '#', github: '#' },
     },
     {
       name: 'Nguyễn Ngô Việt Anh',
       role: 'Product Designer',
       bio: 'Strategic thinker turning complex problems into elegant solutions.',
-      image: '../public/profile-3.jpg',
+      image: '/profile-3.jpg',
       socials: { linkedin: '#', twitter: '#' },
     },
   ];
