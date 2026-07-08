@@ -178,6 +178,18 @@ img.loaded {
   opacity: 1;
 }
 
+@font-face {
+  font-family: 'BTBeauSans';
+  src: url('/fonts/BT-BeauSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-beau-sans {
+  font-family: 'BTBeauSans', sans-serif;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);

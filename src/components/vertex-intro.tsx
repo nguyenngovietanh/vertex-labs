@@ -89,17 +89,13 @@ export function VertexIntro({ onComplete }: IntroProps) {
             <div
               key={index}
               className="overflow-hidden"
-              style={{
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-              }}
+              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
             >
               <span
-                className={`inline-block font-display text-6xl sm:text-8xl md:text-9xl font-bold text-dark-100 transition-all duration-700 ${
+                className={`inline-block font-beau-sans text-6xl sm:text-8xl md:text-9xl font-bold text-dark-100 transition-all duration-700 ${
                   phase === 'reveal' ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                 }`}
-                style={{
-                  transitionDelay: `${index * 80 + 300}ms`,
-                }}
+                style={{ transitionDelay: `${index * 80 + 300}ms` }}
               >
                 {letter}
               </span>
