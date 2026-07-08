@@ -39,14 +39,11 @@ export function VertexFooter() {
           {/* Brand section */}
           <div className="lg:col-span-2">
             <a href="#" className="group flex items-center gap-3 mb-6">
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan via-vertex-500 to-accent-teal rounded-lg opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative font-display font-bold text-xl text-dark-950">V</span>
-              </div>
-              <span className="font-display font-semibold text-xl tracking-tight">
-                <span className="text-dark-100">Vertex</span>
-                <span className="gradient-text ml-1">Labs</span>
-              </span>
+              <img
+                src="/white-horizontal.svg"
+                alt="Vertex Labs"
+                className="h-8 w-auto group-hover:opacity-80 transition-opacity duration-300"
+              />
             </a>
             <p className="text-dark-400 mb-6 max-w-md">
               Building exceptional digital products that transform businesses.
