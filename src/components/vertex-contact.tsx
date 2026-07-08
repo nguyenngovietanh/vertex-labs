@@ -223,7 +223,7 @@ export function VertexContact() {
             ))}
 
             {/* CTA card */}
-            <div className="relative p-6 rounded-2xl bg-gradient-to-br from-vertex-900/30 to-dark-950 border border-vertex-800/30 overflow-hidden">
+            <div className="relative h-auto p-6 rounded-2xl bg-gradient-to-br from-vertex-900/30 to-dark-950 border border-vertex-800/30 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-vertex-500/10 rounded-full blur-2xl" />
               <div className="relative">
                 <p className="font-display text-lg font-semibold text-dark-100 mb-2">

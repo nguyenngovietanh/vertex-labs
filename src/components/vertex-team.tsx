@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Twitter, Github, Trophy, Lightbulb, ShieldCheck, Users } from 'lucide-react';
 
 export function VertexTeam() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -25,29 +25,29 @@ export function VertexTeam() {
   const leadership = [
     {
       name: 'Nguyễn Quỳnh Nga',
-      role: 'Founder & CEO',
-      bio: '10+ years in product development. Former Tech Lead at major tech companies.',
+      role: 'Chief Executive Officer',
+      bio: 'A veteran architect and serial entrepreneur with 20+ years of leadership in regenerative design and sustainable community models. Nga brings a powerful, human-centric vision to Vertex Labs, bridging the gap between innovative design principles and high-impact technology solutions.',
       image: '/profile-1.jpg',
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
       name: 'Nguyễn Hữu Linh',
-      role: 'Tech Lead',
-      bio: 'Award-winning designer with expertise in UX strategy and design systems.',
+      role: 'Chief Technology Officer',
+      bio: 'With 5+ years of software engineering experience, Linh excels at balancing robust technical architecture with seamless user experiences. He is a results-driven lead, highly trusted by clients for consistently delivering high-performance products on schedule.',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400',
       socials: { linkedin: '#', twitter: '#' },
     },
     {
       name: 'Lê Chí Kiên',
-      role: 'Fullstack Developer',
-      bio: 'Full-stack architect specializing in scalable cloud solutions.',
+      role: 'Technical Leader',
+      bio: 'A front-end specialist with 5+ years of experience, Kien focuses on crafting intuitive, visually refined interfaces. He bridges the gap between complex functionality and user needs, ensuring every project delivers both aesthetic excellence and smooth interactivity.',
       image: '/profile-2.jpg',
       socials: { linkedin: '#', github: '#' },
     },
     {
       name: 'Nguyễn Ngô Việt Anh',
-      role: 'Product Designer',
-      bio: 'Strategic thinker turning complex problems into elegant solutions.',
+      role: 'Digital Creative Director',
+      bio: 'Combining 7 years of product development with a 3-year focus on UI/UX, Viet Anh is an expert in user-centric design. He translates complex user needs into elegant, high-impact solutions, consistently balancing technical requirements with flawless usability.',
       image: '/profile-3.jpg',
       socials: { linkedin: '#', twitter: '#' },
     },
@@ -57,18 +57,22 @@ export function VertexTeam() {
     {
       title: 'Excellence',
       description: 'We deliver nothing less than exceptional work.',
+      icon: Trophy,
     },
     {
       title: 'Innovation',
       description: 'We embrace new ideas and technologies.',
+      icon: Lightbulb,
     },
     {
       title: 'Integrity',
       description: 'We build trust through transparency.',
+      icon: ShieldCheck,
     },
     {
       title: 'Collaboration',
       description: 'We succeed together with our clients.',
+      icon: Users,
     },
   ];
 
@@ -173,32 +177,44 @@ export function VertexTeam() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="relative p-8 sm:p-12 rounded-3xl bg-dark-950 border border-dark-700 overflow-hidden">
+          <div className="relative p-8 sm:p-12 rounded-3xl bg-dark-950 border border-dark-700 overflow-hidden" style={{ background: 'linear-gradient(135deg, #06b6d4 0%, #22c55e 50%, #14b8a6 100%)' }}>
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-vertex-500/10 to-transparent" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-accent-cyan/10 to-transparent" />
 
             <div className="relative">
-              <h3 className="font-display text-2xl font-bold text-dark-100 mb-8 text-center">
+              <h3 className="font-display text-2xl font-bold text-dark-900 mb-8 text-center">
                 Our Values Drive Everything We Do
               </h3>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {values.map((value, index) => (
-                  <div
-                    key={value.title}
-                    className="text-center"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-vertex-500/20 to-accent-cyan/20 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-vertex-500 to-accent-cyan" />
+                {values.map((value, index) => {
+                  const Icon = value.icon;
+                  return (
+                    <div
+                      key={value.title}
+                      className="text-center group"
+                      style={{ transitionDelay: `${index * 100}ms` }}
+                    >
+                      <div className="w-12 h-12 mx-auto mb-4 rounded-xl border border-dark-600/30 bg-dark-900/50 flex items-center justify-center transition-all group-hover:scale-110">
+                        {}
+                        <div className="w-6 h-6">
+                          <Icon 
+                            className="w-full h-full text-transparent bg-clip-text bg-gradient-to-r from-vertex-400 to-accent-cyan" 
+                            stroke="cyan" 
+                            style={{ 
+                              fill: 'none',
+                            }} 
+                          />
+                        </div>
+                      </div>
+                      <h4 className="font-display text-lg font-semibold text-dark-900 mb-2">
+                        {value.title}
+                      </h4>
+                      <p className="text-sm text-dark-700">{value.description}</p>
                     </div>
-                    <h4 className="font-display text-lg font-semibold text-dark-100 mb-2">
-                      {value.title}
-                    </h4>
-                    <p className="text-sm text-dark-400">{value.description}</p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
