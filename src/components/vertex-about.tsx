@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Cpu, Layers, Target } from 'lucide-react';
+import { Counter } from './counter';
 
 export function VertexAbout() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -141,12 +142,11 @@ export function VertexAbout() {
                     <div
                       key={stat.label}
                       className={`group p-4 rounded-xl bg-dark-800/50 border border-dark-700 hover:border-vertex-500/30 transition-all duration-300`}
-                      style={{
-                        transitionDelay: `${index * 100}ms`,
-                      }}
+                      style={{ transitionDelay: `${index * 100}ms` }}
                     >
                       <div className="font-display text-3xl font-bold gradient-text mb-1">
-                        {stat.value}
+                        {/* Chỉ chạy animation khi isVisible là true */}
+                        {isVisible ? <Counter value={stat.value} /> : '0+'}
                       </div>
                       <div className="text-sm text-dark-400">{stat.label}</div>
                     </div>
@@ -158,7 +158,7 @@ export function VertexAbout() {
             {/* Floating badge */}
             <div className="absolute -top-4 -right-4 px-4 py-2 bg-gradient-to-r from-vertex-600 to-accent-cyan rounded-full text-dark-950 font-semibold text-sm flex items-center gap-2 shadow-lg glow-green">
               <ArrowUpRight size={16} />
-              <span>Since 2018</span>
+              <span>Since 2025</span>
             </div>
           </div>
         </div>
