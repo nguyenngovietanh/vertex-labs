@@ -25,7 +25,7 @@ i18n
             "hero_title1": "Where Ideas",
             "hero_title2": "Become Reality",
             "hero_desc": "We are a team of experienced engineers and designers building exceptional digital products. From concept to launch, we transform ideas into reality.",
-            "hero_cta1": "View Our Work",
+            "hero_cta1": "View Our Works",
             "hero_cta2": "Start a Project",
             "scroll": "Scroll",
 
@@ -72,7 +72,7 @@ i18n
             "svc6_f1": "Audits", "svc6_f2": "Testing", "svc6_f3": "Architecture",
 
             // Projects
-            "proj_badge": "Our Work",
+            "proj_badge": "Our Works",
             "proj_title1": "Projects that ",
             "proj_title2": "speak for themselves",
             "proj_desc": "A selection of our recent work, showcasing our expertise in building impactful digital products across various industries.",
